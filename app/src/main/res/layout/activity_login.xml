@@ -6,8 +6,17 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:orientation="vertical"
-    tools:context=".LoginActivity"
-    >
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/igIcon"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:width="200dp"
+        android:src="@drawable/grove"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etUsername"
@@ -43,8 +52,14 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:backgroundTint="#4CAF50"
+        android:text="Sign Up"
         android:textColor="#FFFFFF"
-        android:text="Sign Up" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin"
+        app:layout_constraintVertical_bias="0.041" />
 
     <Button
         android:id="@+id/btnAuth"
