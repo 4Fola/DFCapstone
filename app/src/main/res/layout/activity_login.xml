@@ -71,12 +71,14 @@
         />
 
     <TextView
+        android:id="@+id/tvAuthStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Auth Status"
-        android:id="@+id/tvAuthStatus"
         android:textSize="25sp"
+        android:layout_weight="1"
         android:textColor="@color/purple_700"
-        />
+        android:text="Biometric Status"
+        android:textAlignment="center"
+        tools:ignore="HardcodedText" />
 
 </LinearLayout>
