@@ -1,6 +1,6 @@
 # DFCapstone
 
-**DFCapstone** is an Instagram mockup app to test Biometric Authentication
+**DFCapstone** is an Instagram mockup app with a backend server to test Biometric Authentication
 
 Contains the following functionalities:
 
