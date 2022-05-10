@@ -18,6 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Instagram_01">
 
+        <activity
+            android:name=".SignupActivity" android:parentActivityName=".LoginActivity"
+            android:exported="false" />
+
         <!-- make sure within the application tag, otherwise app will crash with XmlResourceParser errors -->
         <provider
             android:name="androidx.core.content.FileProvider"

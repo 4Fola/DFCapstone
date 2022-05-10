@@ -23,11 +23,12 @@ import com.parse.ParseUser;
 
 import java.util.concurrent.Executor;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity<signUp, findViewById> extends AppCompatActivity {
     public static final String TAG = "LoginActivity";
     private EditText etUsername;
     private EditText etPassword;
     private Button btnLogin;
+    private Button btnSignup; // NAV SIGNUP 00
 
     // UI Views Biometric
     Button btnAuth;
@@ -103,6 +104,17 @@ public class LoginActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
+
+        // NAVIGATING TO SIGN UP 01 PAGE USING INTENT
+        btnSignup = (Button) findViewById(R.id.btnSignup);
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSignup();
+            }
+        });
+        // END NAV SIGNUP 01
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,6 +126,12 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    // NAV SIGNUP 02
+    public void openSignup() {
+        Intent intent = new Intent(this, SignupActivity.class);
+        startActivity(intent);
+    }
+    // END NAV SIGNUP 02
 
     private void loginUser(String username, String password) {
         Log.i(TAG, "Attempting to login user " + username);
