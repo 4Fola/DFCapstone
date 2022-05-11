@@ -46,7 +46,7 @@ public class SignupActivity extends AppCompatActivity {
                 String username = etUsername.getText().toString();
                 String phone = etPhone.getText().toString();
                 String password = etPassword.getText().toString();
-                signupUser(username, password);
+                signupUser(email, username, phone, password);
             }
         });
     }
@@ -71,20 +71,18 @@ public class SignupActivity extends AppCompatActivity {
 //        }
 //    });
 
-    private void signupUser(String username, String password) {
+    public void signupUser(String email, String username, String phone, String password) {
         Log.i(TAG, "Trying to register a new user " + username);
 
-        user.signUpInBackground(new SignUpCallback() {
-            @Override
-            public void done(ParseException e) {
-                if (e != null) {
-                    Log.e(TAG, "Unable to signUp", e);
-                    Toast.makeText(SignupActivity.this, "Issue signingUp", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                goMainActivity();
-                Toast.makeText(SignupActivity.this, "Signed Up!", Toast.LENGTH_SHORT).show();
+        // user.signUpInBackground(new SignUpCallback()
+        user.signUpInBackground(e -> {
+            if (e == null) {
+                Log.e(TAG, "Unable to signUp", e);
+                Toast.makeText(SignupActivity.this, "Issue signing up", Toast.LENGTH_LONG).show();
+                return;
             }
+            goMainActivity();
+            Toast.makeText(SignupActivity.this, "Signed Up!", Toast.LENGTH_SHORT).show();
         });
 
     }
